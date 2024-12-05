@@ -1,5 +1,4 @@
 ﻿const TextField = Formio.Components.components.textfield;
-const Components = Formio.Components.components;
 
 class JanaTextField extends TextField {
 	static get builderInfo() {
@@ -29,5 +28,5 @@ class JanaTextField extends TextField {
 		return JanaTextField.schema();
 	}
 }
-console.log('Registrace komponenty JanaTextField proběhla 3');
+console.log('Registrace komponenty JanaTextField proběhla 4');
 Formio.Components.addComponent('janatextfield', JanaTextField);
