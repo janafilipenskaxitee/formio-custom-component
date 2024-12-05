@@ -1,61 +1,35 @@
-﻿if (window.Formio) {
-    const TextFieldComponent = window.Formio.Components.components.textfield;
-    const TextFieldEditForm = window.Formio.Components.components.textfield.editForm;
+﻿import TextField from 'formiojs/components/textfield/TextField';
+import Components from 'formiojs/components/Components';
 
-    class JanaTextField extends TextFieldComponent {
-        static schema(...extend) {
-            return TextFieldComponent.schema({
-                type: 'janaTextField',
-                label: 'Jana Text Field',
-                key: 'janaTextField',
-                input: true
-            }, ...extend);
-        }
+class JanaTextField extends TextField {
+	static get builderInfo() {
+		return {
+			title: 'Jana Textfield',
+			group: 'basic',
+			icon: 'fa fa-font',
+			weight: 0,
+			schema: JanaTextField.schema()
+		};
+	}
 
-        static get builderInfo() {
-            return {
-                title: 'Jana Text Field',
-                group: 'basic',
-                icon: 'terminal',
-                weight: 0,
-                documentation: '',
-                schema: JanaTextField.schema()
-            };
-        }
+	static schema(...extend) {
+		return TextField.schema({
+			type: 'janatextfield',
+			label: 'Jana Textfield',
+			key: 'janatextfield',
+			inputType: 'text'
+		}, ...extend);
+	}
 
-        static editForm(...extend) {
-            return TextFieldEditForm([
-                {
-                    key: 'display',
-                    components: TextFieldEditForm.components.display
-                },
-                {
-                    key: 'data',
-                    components: TextFieldEditForm.components.data
-                },
-                {
-                    key: 'validation',
-                    components: TextFieldEditForm.components.validation
-                },
-                {
-                    key: 'api',
-                    components: TextFieldEditForm.components.api
-                },
-                {
-                    key: 'conditional',
-                    components: TextFieldEditForm.components.conditional
-                },
-                {
-                    key: 'logic',
-                    components: TextFieldEditForm.components.logic
-                },
-                {
-                    key: 'layout',
-                    components: TextFieldEditForm.components.layout
-                }
-            ], ...extend);
-        }
-    }
+	static editForm(...extend) {
+		return TextField.editForm(...extend);
+	}
 
-    window.Formio.Components.addComponent('janaTextField', JanaTextField);
+	get defaultSchema() {
+		return JanaTextField.schema();
+	}
 }
+
+Components.addComponent('janatextfield', JanaTextField);
+
+export default JanaTextField;
