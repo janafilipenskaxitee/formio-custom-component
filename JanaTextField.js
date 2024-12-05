@@ -1,56 +1,61 @@
-//import TextField from 'formiojs/components/textfield/TextField';
-//import Components from 'formiojs/components/Components';
+ï»¿if (window.Formio) {
+    const TextFieldComponent = window.Formio.Components.components.textfield;
+    const TextFieldEditForm = window.Formio.Components.components.textfield.editForm;
 
-//class JanaTextField extends TextField {
-//	static get builderInfo() {
-//		return {
-//			title: 'Jana Textfield',
-//			group: 'basic',
-//			icon: 'fa fa-font',
-//			weight: 0,
-//			schema: JanaTextField.schema()
-//		};
-//	}
+    class JanaTextField extends TextFieldComponent {
+        static schema(...extend) {
+            return TextFieldComponent.schema({
+                type: 'janaTextField',
+                label: 'Jana Text Field',
+                key: 'janaTextField',
+                input: true
+            }, ...extend);
+        }
 
-//	static schema(...extend) {
-//		return TextField.schema({
-//			type: 'janatextfield',
-//			label: 'Jana Textfield',
-//			key: 'janatextfield',
-//			inputType: 'text'
-//		}, ...extend);
-//	}
+        static get builderInfo() {
+            return {
+                title: 'Jana Text Field',
+                group: 'basic',
+                icon: 'terminal',
+                weight: 0,
+                documentation: '',
+                schema: JanaTextField.schema()
+            };
+        }
 
-//	static editForm(...extend) {
-//		return TextField.editForm(...extend);
-//	}
-
-//	get defaultSchema() {
-//		return JanaTextField.schema();
-//	}
-//}
-
-//Components.addComponent('janatextfield', JanaTextField);
-
-//export default JanaTextField;
-
-import Components from 'formiojs/components/Components';
-
-class JanaTextField {
-    static get builderInfo() {
-        return {
-            title: 'Jana Testovací Komponenta',
-            group: 'basic',
-            icon: 'fa fa-font',
-            schema: {
-                type: 'janatextfield',
-                key: 'janatextfield',
-                label: 'Jana Textfield'
-            }
-        };
+        static editForm(...extend) {
+            return TextFieldEditForm([
+                {
+                    key: 'display',
+                    components: TextFieldEditForm.components.display
+                },
+                {
+                    key: 'data',
+                    components: TextFieldEditForm.components.data
+                },
+                {
+                    key: 'validation',
+                    components: TextFieldEditForm.components.validation
+                },
+                {
+                    key: 'api',
+                    components: TextFieldEditForm.components.api
+                },
+                {
+                    key: 'conditional',
+                    components: TextFieldEditForm.components.conditional
+                },
+                {
+                    key: 'logic',
+                    components: TextFieldEditForm.components.logic
+                },
+                {
+                    key: 'layout',
+                    components: TextFieldEditForm.components.layout
+                }
+            ], ...extend);
+        }
     }
+
+    window.Formio.Components.addComponent('janaTextField', JanaTextField);
 }
-
-Formio.Components.addComponent('janatextfield', JanaTextField);
-
-export default JanaTextField;
