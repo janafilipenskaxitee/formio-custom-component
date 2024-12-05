@@ -29,5 +29,5 @@ class JanaTextField extends TextField {
 		return JanaTextField.schema();
 	}
 }
-console.log('Registrace komponenty JanaTextField proběhla 2');
-Components.addComponent('janatextfield', JanaTextField);
+console.log('Registrace komponenty JanaTextField proběhla 3');
+Formio.Components.addComponent('janatextfield', JanaTextField);
