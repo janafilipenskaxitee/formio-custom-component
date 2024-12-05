@@ -3,7 +3,7 @@
 class JanaTextField extends TextField {
 	static get builderInfo() {
 		return {
-			title: 'Jana Textfield',
+			title: 'Jana Text Field',
 			group: 'basic',
 			icon: 'fa fa-font',
 			weight: 0,
@@ -14,19 +14,11 @@ class JanaTextField extends TextField {
 	static schema(...extend) {
 		return TextField.schema({
 			type: 'janatextfield',
-			label: 'Jana Textfield',
+			label: 'Jana Text Field',
 			key: 'janatextfield',
 			inputType: 'text'
 		}, ...extend);
 	}
-
-	static editForm(...extend) {
-		return TextField.editForm(...extend);
-	}
-
-	get defaultSchema() {
-		return JanaTextField.schema();
-	}
 }
-console.log('Registrace komponenty JanaTextField proběhla 4');
+console.log('Registrace komponenty JanaTextField proběhla 5');
 Formio.Components.addComponent('janatextfield', JanaTextField);
