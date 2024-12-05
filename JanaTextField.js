@@ -29,7 +29,7 @@ class JanaTextField extends TextField {
 		return JanaTextField.schema();
 	}
 }
-
+console.log('Registrace komponenty JanaTextField proběhla');
 Components.addComponent('janatextfield', JanaTextField);
 
 //export default JanaTextField;
