@@ -20,11 +20,11 @@ class JanaTextField extends TextField {
         }, ...extend);
     }
 
-    inputInfo(input) {
-        const info = super.inputInfo(input);
-        info.class += 'xitee'; 
+    get inputInfo() {
+        const info = super.inputInfo;
+        info.class += 'xitee';
         return info;
     }
 }
-console.log('Registrace komponenty JanaTextField proběhla 6');
+console.log('Registrace komponenty JanaTextField proběhla 7');
 Formio.Components.addComponent('janatextfield', JanaTextField);
