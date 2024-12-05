@@ -31,5 +31,3 @@ class JanaTextField extends TextField {
 }
 console.log('Registrace komponenty JanaTextField proběhla');
 Components.addComponent('janatextfield', JanaTextField);
-
-//export default JanaTextField;

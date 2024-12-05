@@ -8,7 +8,10 @@ module.exports = {
         library: 'JanaTextField',
         libraryTarget: 'umd'
     },
-    mode: 'production',
+    mode: 'development',
+    optimization: {
+        minimize: false
+    },
     module: {
         rules: [
             {
