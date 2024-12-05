@@ -32,4 +32,4 @@ class JanaTextField extends TextField {
 
 Components.addComponent('janatextfield', JanaTextField);
 
-export default JanaTextField;
+//export default JanaTextField;
